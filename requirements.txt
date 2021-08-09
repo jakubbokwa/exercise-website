@@ -1,0 +1,27 @@
+Możliwość wyszukiwania firm zawierających daną frazę - tjst. user wpisuje w input np. ant i w wynikach dostaje wszystkie firmy zawierające ant, czyli np. Divante . Niech będą one wyświetlone w tabelce.
+Możliwość pobrania pliku JSON z klientami, z tą różnicą, że każdy klient miałby dodatkowe pole company, w którym byłby obiekt firmy do której klient należy. to znaczy poniższego użytkownika
+
+ {
+    "name": "Lajuana",
+    "surname": "Grinninger",
+    "email": "lgrinninger@moneyingprebaptize.co",
+    "companyCode": "MONEYINGPREBAPTIZE"
+  }
+chcielibyśmy przetransformować w:
+ {
+    "name": "Lajuana",
+    "surname": "Grinninger",
+    "email": "lgrinninger@moneyingprebaptize.co",
+    "companyCode": "MONEYINGPREBAPTIZE",
+    "company": {
+       "name": "moneyingprebaptizeex",
+       "code": "MONEYINGPREBAPTIZE",
+       "domain": "moneyingprebaptize"
+    }
+  }
+
+dane firmy muszą się zgadzać z plikiem companies.json
+
+3. Wprowadź pole weryfikujące nr telefonu. Nr powinien być w następującym formacie +nrKierunkowy-xxx-xxx-xxx , po wpisaniu w input nr telefonu, użytkownik powinien mieć przycisk "weryfikuj" który poda mu informację zwrotną czy telefon jest w oczekiwanym formacie. Nr telefonu powinien być weryfikowany wyrażeniem regularnym.
+
+4. Layout powinien być zrobiony przy użyciu flexboxa/grida. Powinien też być responsywny i używalny zarówno na telefonach, komputerach i tabletach. To jest powinien się ładnie na nie skalować.
