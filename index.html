@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Company search website</title>
-</head>
+  </head>
 
-<body>
-    <h1>Test</h1>
+  <body>
+    <section class="company-search">
+      <h1>Search for Companies</h1>
+      <div class="underline"></div>
+      <form id="search-companies">
+        <input type="text" />
+      </form>
+      <small>
+        Please enter at least 3 characters. Results show the first 10 entries.
+        Did not find the company you were looking for? Try typing a longer
+        phrase.
+      </small>
+      <div class="company-search-results"></div>
+    </section>
+
+    <section class="download-users">
+      <h1>List of Customers</h1>
+
+      <div class="underline"></div>
+      <div class="download-container">
+        <a href="" download="customers.json"
+          ><img src="./arrow-down.svg" alt="Download icon" /> Click here to
+          download</a
+        >
+      </div>
+    </section>
+
+    <section class="verify-phone-number">
+      <h1>Verify Phone Number</h1>
+      <div class="underline"></div>
+      <form id="verify-number">
+        <label for="phone">Enter your phone number</label>
+        <div>
+          <input type="tel" id="phone" />
+          <small>Format: +12-345-678-901</small>
+          <div class="verify-number-btn"><p>Verify</p></div>
+        </div>
+      </form>
+    </section>
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
