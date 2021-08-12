@@ -1,19 +1,24 @@
 // External source
-const customers =
+const customersPath =
   "https://gist.githubusercontent.com/michaelKurowski/93a32a8580f9e430d7b924d8dd858b33/raw/61683517d7311ebf06c4840947ef613297ef9673/customers.json";
-const companies =
+const companiesPath =
   "https://gist.githubusercontent.com/michaelKurowski/93a32a8580f9e430d7b924d8dd858b33/raw/61683517d7311ebf06c4840947ef613297ef9673/companies.json";
 // Locally
 // const customers = "./customers.json";
 // const companies = "./companies.json";
 
+const getData = async (filename) => {
+  const response = await fetch(filename);
+  return await response.json();
+};
+
 const loadData = async () => {
   try {
-    const customersResult = await fetch(customers);
-    const companiesResult = await fetch(companies);
-    const arrayOfAllCustomers = await customersResult.json();
-    const arrayOfAllCompanies = await companiesResult.json();
-    return { customers: arrayOfAllCustomers, companies: arrayOfAllCompanies };
+    const [customers, companies] = await Promise.all([
+      getData(customersPath),
+      getData(companiesPath),
+    ]);
+    return { customers, companies };
   } catch (err) {
     console.log(err);
     console.log("There has been an error fetching the data");
